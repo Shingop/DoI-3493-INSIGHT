@@ -314,25 +314,6 @@ strong {
     font-weight: 800;
 }
 
-a {
-    color: #ff0000;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    background-color: #000000;
-    padding: 1px;
-}
-
-a:hover::before {
-    content: "ACCESS: [";
-}
-
-a:hover::after {
-    content: "]";
-}
-
 hr {
     background-color: rgb(var(--ec-popup-color));
     border: none;
