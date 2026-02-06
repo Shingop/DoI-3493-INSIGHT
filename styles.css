@@ -367,7 +367,7 @@ hr {
 .ec {
     font-family: 'Roboto Mono', monospace;
     padding: 10px;
-    background-image: url(https://kaktuskontainer.wdfiles.com/local--files/format-hell/scp_trans.png);
+    background-image: url("https://kaktuskontainer.wdfiles.com/local--files/format-hell/scp_trans.png");
     background-size: cover;
     background-position: center, center;
     background-blend-mode: darken;
@@ -582,6 +582,7 @@ hr {
     border: solid 4px rgba(153, 0, 0);
     text-align: center;
     background-color: rgba(74, 1, 9, 0.7);
+    memo-logo: url("https://scp-wiki.wikidot.com/local--files/theme:basalt/CLASSIFICATION_LIGHTLOGO.png");
 }
 
 .classification_memo h2 {
@@ -648,7 +649,7 @@ hr {
 
 .bi-popup {
     background-color: rgb(var(--basalt-secondary-color));
-    background-image: url(https://scp-wiki.wikidot.com/local--files/theme:basalt/ETHICS_LIGHTLOGO.png);
+    background-image: url("https://scp-wiki.wikidot.com/local--files/theme:basalt/ETHICS_LIGHTLOGO.png");
     background-size: cover;
     background-position: center;
     background-blend-mode: darken;
