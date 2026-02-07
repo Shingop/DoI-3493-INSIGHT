@@ -1,7 +1,7 @@
 /* ==========================================
    FONT IMPORT
    ========================================== */
-/* Departure Mono font is imported in the HTML head */
+/* Departure Mono font is imported in HTML head */
 
 /* ==========================================
    CSS VARIABLES
@@ -284,8 +284,8 @@ hr {
     gap: 10px;
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     background-color: rgba(0, 0, 0, 0.95);
     padding: 15px;
     z-index: 1000;
@@ -293,13 +293,12 @@ hr {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
-    max-width: 1200px;
-    width: 90%;
+    justify-content: center;
+    align-items: center;
 }
 
 .tab-button {
-    flex: 1;
-    max-width: 400px;
+    flex: 0 1 400px;
     padding: 15px 20px;
     background-color: rgb(var(--basalt-secondary-color));
     border: 3px solid rgb(var(--ec-popup-color));
