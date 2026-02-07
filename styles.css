@@ -59,20 +59,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Only apply ACCESS effect to links NOT in excluded areas */
-a:not(.bi-r *, .bi-y *, .bi-g *, .bi-b *, .bi-popup *, .scientistimage *):hover {
-    background-color: #000000;
-    padding: 1px;
-}
-
-a:not(.bi-r *, .bi-y *, .bi-g *, .bi-b *, .bi-popup *, .scientistimage *):hover::before {
-    content: "ACCESS: [";
-}
-
-a:not(.bi-r *, .bi-y *, .bi-g *, .bi-b *, .bi-popup *, .scientistimage *):hover::after {
-    content: "]";
-}
-
 /* Keep annotation highlight links simple */
 .bi-r a,
 .bi-y a,
@@ -86,20 +72,7 @@ a:not(.bi-r *, .bi-y *, .bi-g *, .bi-b *, .bi-popup *, .scientistimage *):hover:
 .bi-y a:hover,
 .bi-g a:hover,
 .bi-b a:hover {
-    background-color: transparent;
-    padding: 0;
     text-decoration: none;
-}
-
-.bi-r a:hover::before,
-.bi-y a:hover::before,
-.bi-g a:hover::before,
-.bi-b a:hover::before,
-.bi-r a:hover::after,
-.bi-y a:hover::after,
-.bi-g a:hover::after,
-.bi-b a:hover::after {
-    content: none;
 }
 
 /* Links inside popups */
@@ -108,30 +81,9 @@ a:not(.bi-r *, .bi-y *, .bi-g *, .bi-b *, .bi-popup *, .scientistimage *):hover:
     color: #ff0000;
 }
 
-.bi-popup a:hover {
-    background-color: transparent;
-    padding: 0;
-}
-
-.bi-popup a:hover::before,
-.bi-popup a:hover::after {
-    content: none;
-}
-
 /* Scientist image links */
 .scientistimage a {
     pointer-events: auto;
-}
-
-.scientistimage a:hover {
-    background-color: transparent;
-    padding: 0;
-    text-decoration: none;
-}
-
-.scientistimage a:hover::before,
-.scientistimage a:hover::after {
-    content: none;
 }
 
 hr {
