@@ -432,7 +432,7 @@ hr {
     translate: -50%;
     width: 65%;
     transition: all 0.2s;
-    z-index: 8;
+    z-index: 10000;
     visibility: hidden;
     max-height: calc(100vh - 12rem);
     overflow: auto;
