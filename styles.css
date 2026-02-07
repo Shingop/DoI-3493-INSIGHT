@@ -440,6 +440,13 @@ hr {
     pointer-events: none;
 }
 
+.bi-popup hr {
+    background-color: rgb(var(--ec-popup-color));
+    border: none;
+    height: 1px;
+    margin: 0.5em 0;
+}
+
 .bi-popup::before {
     content: "ANNOTATION";
     font-weight: bold;
