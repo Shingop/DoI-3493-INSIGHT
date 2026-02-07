@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const annotationLinks = document.querySelectorAll('.bi-r a, .bi-y a, .bi-g a, .bi-b a');
     let activePopup = null;
+    let clickedPopup = null;
 
     annotationLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -89,39 +90,81 @@ document.addEventListener('DOMContentLoaded', function() {
             const popup = this.closest('.bi-r, .bi-y, .bi-g, .bi-b').nextElementSibling;
             
             if (popup && popup.classList.contains('bi-popup')) {
-                // If clicking the same popup, close it
-                if (activePopup === popup) {
-                    popup.style.opacity = '0';
-                    popup.style.visibility = 'hidden';
-                    popup.style.bottom = '4rem';
-                    activePopup = null;
+                // If clicking the same popup that's already clicked, unclick it
+                if (clickedPopup === popup) {
+                    clickedPopup = null;
+                    popup.classList.remove('clicked-popup');
                 } else {
-                    // Close previous popup if exists
-                    if (activePopup) {
-                        activePopup.style.opacity = '0';
-                        activePopup.style.visibility = 'hidden';
-                        activePopup.style.bottom = '4rem';
+                    // Remove clicked state from previous popup
+                    if (clickedPopup) {
+                        clickedPopup.classList.remove('clicked-popup');
                     }
-                    
-                    // Open new popup
+                    // Set new clicked popup
+                    clickedPopup = popup;
+                    popup.classList.add('clicked-popup');
+                    // Show it
                     popup.style.opacity = '1';
                     popup.style.visibility = 'visible';
                     popup.style.bottom = '5rem';
-                    activePopup = popup;
                 }
+            }
+        });
+
+        // Handle hover
+        const parentHighlight = link.closest('.bi-r, .bi-y, .bi-g, .bi-b');
+        if (parentHighlight) {
+            parentHighlight.addEventListener('mouseenter', function() {
+                const popup = this.nextElementSibling;
+                if (popup && popup.classList.contains('bi-popup')) {
+                    activePopup = popup;
+                    popup.style.opacity = '1';
+                    popup.style.visibility = 'visible';
+                    popup.style.bottom = '5rem';
+                }
+            });
+
+            parentHighlight.addEventListener('mouseleave', function() {
+                const popup = this.nextElementSibling;
+                if (popup && popup.classList.contains('bi-popup') && popup !== clickedPopup) {
+                    // Only hide if not clicked
+                    popup.style.opacity = '0';
+                    popup.style.visibility = 'hidden';
+                    popup.style.bottom = '4rem';
+                    if (activePopup === popup) {
+                        activePopup = null;
+                    }
+                }
+            });
+        }
+    });
+
+    // Also handle popup hover
+    document.querySelectorAll('.bi-popup').forEach(popup => {
+        popup.addEventListener('mouseenter', function() {
+            this.style.opacity = '1';
+            this.style.visibility = 'visible';
+            this.style.bottom = '5rem';
+        });
+
+        popup.addEventListener('mouseleave', function() {
+            if (this !== clickedPopup) {
+                this.style.opacity = '0';
+                this.style.visibility = 'hidden';
+                this.style.bottom = '4rem';
             }
         });
     });
 
-    // Close popup when clicking outside
+    // Close clicked popup when clicking outside
     document.addEventListener('click', function(e) {
-        if (activePopup && 
+        if (clickedPopup && 
             !e.target.closest('.bi-popup') && 
             !e.target.closest('.bi-r, .bi-y, .bi-g, .bi-b')) {
-            activePopup.style.opacity = '0';
-            activePopup.style.visibility = 'hidden';
-            activePopup.style.bottom = '4rem';
-            activePopup = null;
+            clickedPopup.classList.remove('clicked-popup');
+            clickedPopup.style.opacity = '0';
+            clickedPopup.style.visibility = 'hidden';
+            clickedPopup.style.bottom = '4rem';
+            clickedPopup = null;
         }
     });
 });
