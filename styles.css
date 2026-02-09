@@ -149,6 +149,20 @@ hr {
     background-blend-mode: darken;
     font-size: 90%;
     margin-bottom: 1.5em;
+    overflow: hidden;
+}
+
+.ec ul {
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.ec ul li {
+    margin-left: 0;
+}
+
+.ec p {
+    margin: 5px 0;
 }
 
 .ec-popup {
