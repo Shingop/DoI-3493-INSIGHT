@@ -709,27 +709,23 @@ hr {
 }
 
 .header-box > .top-right-box {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 10px;
-}
-
-.header-box > .top-right-box img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    grid-area: top-right-box;
+    display: block;
+    background-image: url("https://scp-wiki.wdfiles.com/local--files/theme%3Abasalt/basalt_scp_logo-for_darkmode.svg");
+    background-size: 75px 75px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    margin-top: 1em;
+    margin-right: 1em;
+    margin-left: -1em;
 }
 
 @media screen and (max-width: 800px) {
     .header-box > .top-right-box {
         min-width: 75px;
-        margin-left: 0;
+        margin-left: -3em;
     }
-}
-
-@media screen and (max-width: 800px) {
     .header-box > .top-left-box {
         padding-left: 1em;
     }
