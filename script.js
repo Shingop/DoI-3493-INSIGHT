@@ -188,24 +188,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// ==========================================
-// EMAIL LOGO AXIS ALIGNMENT
-// ==========================================
-window.addEventListener("load", () => {
-    const bottom = document.querySelector(".bottom-right-box");
-    const top = document.querySelector(".top-right-box");
-
-    if (!bottom || !top) return;
-
-    const bottomRect = bottom.getBoundingClientRect();
-    const topOffsetParent = top.offsetParent;
-
-    if (!topOffsetParent) return;
-
-    const parentRect = topOffsetParent.getBoundingClientRect();
-
-    top.style.position = "absolute";
-    top.style.left = `${bottomRect.left - parentRect.left}px`;
-});
-
