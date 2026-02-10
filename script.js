@@ -188,3 +188,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ==========================================
+// Email logo script
+// ==========================================
+<script>
+window.addEventListener("load", () => {
+  const bottom = document.querySelector(".bottom-right-box");
+  const top = document.querySelector(".top-right-box");
+
+  if (!bottom || !top) return;
+
+  const rect = bottom.getBoundingClientRect();
+  const parentRect = top.offsetParent.getBoundingClientRect();
+
+  top.style.position = "absolute";
+  top.style.left = `${rect.left - parentRect.left}px`;
+});
+</script>
