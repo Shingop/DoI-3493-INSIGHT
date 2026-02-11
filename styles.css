@@ -410,6 +410,7 @@ hr {
    CLASSIFICATION MEMO
    ========================================== */
 .classification_memo {
+    background-image: url("https://raw.githubusercontent.com/Shingop/imagehosting/main/CLASSIFICATION_DARKLOGO.png");
     background-size: contain;
     background-position: top center;
     background-repeat: no-repeat;
@@ -419,7 +420,6 @@ hr {
     border: solid 4px rgba(153, 0, 0);
     text-align: center;
     background-color: rgba(74, 1, 9, 0.7);
-    background-image: url("https://raw.githubusercontent.com/Shingop/imagehosting/main/CLASSIFICATION_DARKLOGO.png");
 }
 
 .classification_memo h2 {
