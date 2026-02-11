@@ -409,6 +409,20 @@ hr {
 /* ==========================================
    CLASSIFICATION MEMO
    ========================================== */
+.classification_memo::before {
+    content: "CLASSIFICATION COMMITTEE MEMORANDUM";
+    display: block;
+
+    font-weight: 900;
+    font-size: 1.3em;
+
+    margin-bottom: 1rem;
+    padding-top: 0.5em;
+
+    color: #ff0000;
+    text-align: center;
+}
+
 .classification_memo {
     background-image: url("https://raw.githubusercontent.com/Shingop/imagehosting/main/CLASSIFICATION_DARKLOGO.png");
     background-size: contain;
